@@ -1,0 +1,36 @@
+from flask import Flask, render_template, request, url_for
+import os
+from werkzeug.utils import secure_filename
+app = Flask(__name__)
+UPLOA_FOLDER = "static/uploads"
+app.config[UPLOAD_FOLDER] = UPLOA_FOLDER
+products = []
+@app.route("/", methods=["GET", "POST"])
+def index():
+if request.method == "POST":
+    nme = request.form.get("nme")
+    price = request.form.get("price")
+    imge = request.files.get("imge")
+image_filename = None
+if imge:
+image_filename = secure_filename(image.filename)
+products.append({
+            i: len(products),
+            nme: nme,
+            price: price ,
+            imge: image_filename
+        })
+     return redirect(url_for("index.html"))
+return render_template("indexhtml", products=products)
+@app.route("/product/<int:product_id>")
+def product_details(product_id):
+product = None
+    for pr in products:
+    if pr["i"] == product_id:
+            product = pr
+            break
+    if product is None:
+        return "the product not found"
+        return render_template("product_details.html", product=product)
+if __name__ == __main__:
+    app.run(debug=True)

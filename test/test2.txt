@@ -1,0 +1,15 @@
+class A :
+__Name = "H"
+_age = 10
+def __init__ (self , n , ag):
+self.n = Name
+self.ag = ag
+def calc_age(age):
+if age >= 18:
+print(True)
+elif age<=17:
+print(Flase)
+else:
+print(None)
+Has = A(self)
+Has.calc_age(20)

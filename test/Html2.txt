@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Document</title>
+</head>
+<body>
+<div class="container">
+<form method="POST" enctype="multipart/form_data">
+<label>productname</label>
+<input type="text" name="name" required />
+<label>productprice</label>
+<input type="number" name="price" required/>
+<label>productimage</label>
+<input type="file" name="image" />
+<button type="submit">Add</button>
+<h2>Products List</h2>
+{% if products %}
+<ul class="productlist">
+ {% for product in products %}
+ <li>
+ <div>
+ {% if product.image %}
+<img src="{{ url_for('static', filename='uploads/' ~ product.image) }}"/>
+ <label>{{ product.nam}}</label>
+ {% endif %}
+ </div>
+ <a href="{{ url_for('product_details', product_id=product.id) }}">show details</a>
+ </li>
+ {% endfor %}
+</ul>
+{% else %}
+<p>there are no products</p>
+{% endif %}
+</div>
+</form>
+</div>
+</body>
+</html>

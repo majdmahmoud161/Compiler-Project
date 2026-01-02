@@ -1,0 +1,161 @@
+lexer grammar PythonLexer;
+/*-------------tokens (operator && keyword)---------------- */
+TRUEBOOL:'True';
+FALSEBOOL:'False';
+FOR:'for';
+IF:'if';
+ELSE:'else';
+ELIF:'elif';
+WHILE:'while';
+BREAK:'break';
+CONTINUE:'continue';
+RETURN:'return';
+/*----------------------identifiers-----------------*/
+PRINT:'print';
+TYPE:'type';
+INPUT:'input';
+LEN:'len';
+APPEND:'append';
+INSERT:'insert';
+POP:'pop';
+/*--------------------OOP--------------------------*/
+CLASS:'class';
+DEF:'def';
+CLS:'cls';
+SELF:'self';
+INIT:'__init__';
+SUPER:'super';
+STR:'str';
+REPR:'repr';
+EXIT:'exit';
+DEL:'del';
+ENTER:'enter';
+NONE:'None';
+SETTER:'setter';
+PROPERTY:'property';
+CLASSMETHOD:'classmethod';
+STATICMETHOD:'staticmethod';
+DOT:'.';
+COLONE:':';
+COMMA:',';
+AT:'@';
+PRIVATE:'__';
+PROTECTED:'_';
+OPENPRAC:'(';
+CLOSEPRAC:')';
+OPENKPRA:'{';
+CLOSEKPRA:'}';
+OPENSQUER:'[';
+CLOSESQUER:']';
+RANGE:'range';
+DOUBLEOPENKPRA:'{{';
+DOUBLECLOSEKPRA:'}}';
+//Flask Token
+//FORM_TAG : FORM;
+IMPORT:'import';
+FROM:'from';
+FLASKLIB :'flask';
+FLASK:'Flask';
+RENDERTEMPLATE:'render_template';
+REQUEST:'request';
+URLFOR:'url_for';
+REDIRECT:'redirect';
+OS:'os';
+UTILS:'werkzeug.utils';
+SEQUREFILENAME:'secure_filename';
+NAME:'__name__';
+CONFIG:'config';
+ROUTE:'route';
+METHODS:'methods';
+METHOD:'method';
+FORM:'form';
+FILES:'files';
+GET:'get';
+SAVE:'save';
+PATH:'path';
+JOIN:'join';
+FILENAME:'filename';
+RUN:'run';
+DEBUG:'debug';
+MAIN:'__main__';
+UPLOADFOLDER:'UPLOAD_FOLDER';
+//jinja2
+ENDIF:'endif';
+ENDFOR:'endfor';
+OPENCONDITION:'{%';
+CLOSECONDITION:'%}';
+OPENCOMMENT:'{#';
+CLOSECOMMENT:'#}';
+//HTML
+TAG_OPEN:'<';
+TAG_OPEN_SLASH: '</';
+SLASH_CLOSE: '/>';
+TAG_CLOSE:'>';
+DOCTYPEHTML_TAG : '!DOCTYPE html';
+HTML_TAG   : 'html';
+HEAD_TAG   : 'head';
+BODY_TAG   : 'body';
+DIV_TAG    : 'div';
+P_TAG      : 'p';
+IMG_TAG    : 'img';
+H1_TAG     : 'h1';
+H2_TAG     : 'h2';
+H3_TAG     : 'h3';
+H4_TAG     : 'h4';
+TITLE      : 'title';
+BUTTON_TAG : 'button';
+UL_TAG     : 'ul';
+LI_TAG     : 'li';
+A_TAG      : 'a';
+LABEL_TAG  : 'label';
+LINK       : 'link';
+STYLE       : 'style';
+SRC         : 'src';
+ALT         : 'alt';
+IDHTML      : 'id';
+HREF        : 'href';
+VALUE       : 'value';
+NAMEHTML    : 'name';
+PLACEHOLDER : 'placeholder';
+REL         : 'rel';
+ENCTYPE : 'enctype';
+RQUIRED:'required';
+
+//operator
+SUM:'+';
+SUB:'-';
+MULT:'*';
+DIVISION:'/';
+EQUALS:'=';
+ISEQUALS:'==';
+ISGRATER:'<';
+ISSMALLER:'>';
+POW:'**';
+MOD:'%';
+IFGREATEROREQUALS:'>=';
+IFSMALLEROREQUALS:'<=';
+INCREMENT:'++';
+DECREMENT:'--';
+OR:'or'|'||';
+AND:'and' | '&&';
+NOT:'not' | '!';
+NOTEQUALS:'!=';
+IS:'is';
+ISNOT:'is not';
+IN:'in';
+NOTIN: 'not in';
+
+INT:[0-9]+;
+DOUBLE:INT'.'INT;
+ID :[a-zA-Z][_0-9a-zA-Z]*;
+ROUTEPATH:'"/'[0-9a-zA-Z/<>:_ ]* '"'
+           |'\''[0-9a-zA-Z/<>:_ ]*'\'';
+STRING:'"' [0-9a-zA-Z<>:_.(){}=,'/~ ]* '"'
+       |'\''[0-9a-zA-Z<>:_.(){}=,"/~ ]*'\'';
+COMMENT: '<!--' .*? '-->' -> skip;
+WHSPACE:[ \t\r]+->skip;
+NEWLINE: [\n]+->skip;
+
+
+
+

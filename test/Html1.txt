@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h1>product details</h1>
+    {% if product.im %}
+    <img src="{{ url_for('static', filename='uploads/' ~ product.image) }}"/>
+    {% endif %}
+    <p><label>product nme</label>{{ product.nme}}</p>
+    <p><label>product price</label>{{product.pr}}</p>
+    <p><label>product nom</label>{{product.nom}}</p>
+    <a class="back_link" href="{{ url_for('index') }}">Back </a>
+    </div>
+</body>
+</html>
